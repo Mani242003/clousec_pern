@@ -1,0 +1,209 @@
+/* Document system styles */
+.document-sidebar {
+  width: 280px;
+  transition: all 0.3s ease;
+  position: fixed;
+  top: 64px; /* Adjust based on your header height */
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  overflow-y: auto;
+}
+
+.document-sidebar.collapsed {
+  width: 0;
+  overflow: hidden;
+}
+
+.document-tree {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.document-tree ul {
+  list-style-type: none;
+  padding-left: 1.5rem;
+}
+
+.document-tree-item {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+  cursor: pointer;
+}
+
+.document-tree-item:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.document-tree-item.active {
+  background-color: rgba(59, 130, 246, 0.1);
+  font-weight: 500;
+}
+
+.document-tree-toggle {
+  margin-right: 0.5rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.document-breadcrumb {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background-color: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.document-breadcrumb-item {
+  display: flex;
+  align-items: center;
+}
+
+.document-breadcrumb-separator {
+  margin: 0 0.5rem;
+  color: #9ca3af;
+}
+
+/* TipTap Editor Styles */
+.ProseMirror {
+  min-height: 200px;
+  padding: 1rem;
+  border-radius: 0.375rem;
+  outline: none;
+}
+
+.ProseMirror p {
+  margin-bottom: 1rem;
+}
+
+.ProseMirror h1 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.ProseMirror h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.ProseMirror h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.ProseMirror ul, .ProseMirror ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.ProseMirror li {
+  margin-bottom: 0.25rem;
+}
+
+.ProseMirror blockquote {
+  border-left: 3px solid #e5e7eb;
+  padding-left: 1rem;
+  margin-left: 0;
+  margin-right: 0;
+  font-style: italic;
+}
+
+.ProseMirror a {
+  color: #3b82f6;
+  text-decoration: underline;
+}
+
+.ProseMirror table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.ProseMirror th {
+  background-color: #f3f4f6;
+  font-weight: 600;
+}
+
+.ProseMirror td, .ProseMirror th {
+  border: 1px solid #e5e7eb;
+  padding: 0.5rem;
+}
+
+/* Code Block Styles */
+.ProseMirror pre {
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  padding: 1rem;
+  border-radius: 0.375rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+  position: relative;
+}
+
+.ProseMirror pre code {
+  font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* Dark mode adjustments */
+.dark .document-breadcrumb {
+  background-color: #1f2937;
+  border-color: #374151;
+}
+
+.dark .document-tree-item:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.dark .document-tree-item.active {
+  background-color: rgba(59, 130, 246, 0.2);
+}
+
+/* Code block copy button */
+.code-block-copy-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #d4d4d4;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.ProseMirror pre:hover .code-block-copy-button {
+  opacity: 1;
+}
+
+.code-block-copy-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.code-block-language-label {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #d4d4d4;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+}
